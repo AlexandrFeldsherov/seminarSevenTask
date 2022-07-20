@@ -56,4 +56,4 @@ void MatrixPrintArray(int[,] array)// печать двумерного масс
 int[,] array = NewMatrixArrRand(1, 4);
 LinesMatrixArithmeticMean(array);
 Console.WriteLine();
-MatrixPrintArray(array);
+//MatrixPrintArray(array);
