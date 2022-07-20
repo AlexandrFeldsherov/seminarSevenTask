@@ -36,7 +36,7 @@ void LinesMatrixArithmeticMean(int[,] array)
         }
         mean = mean / array.GetLength(0);
         if (ind == (array.GetLength(1) - 1)) Console.Write(Math.Round(mean, 1));
-        else Console.Write($"{Math.Round(mean, 1)};");
+        else Console.Write($"{Math.Round(mean, 1)}; ");
     }
 }
 void MatrixPrintArray(int[,] array)// печать двумерного массива int, в виде таблицы
