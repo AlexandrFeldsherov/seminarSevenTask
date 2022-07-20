@@ -4,3 +4,48 @@
 5 9 2 3
 8 4 2 4
 1, 7 -> такого числа в массиве нет*/
+
+double[,] NewMatrixArrRand(int a, int b, int c)//создает массив заполнненный псевдослучайными вещественными числами числами в интервале от 'a' до 'b'
+{
+    Random rnd = new Random();
+    int line = rnd.Next(1, 15);
+    int column = rnd.Next(1, 15);
+    double[,] newArr = new double[line, column];
+
+    for (int i = 0; i < line; i++)
+    {
+        for (int ind = 0; ind < column; ind++)
+        {
+            double value = rnd.NextDouble() + rnd.Next(a, b);
+            newArr[i, ind] = value;
+        }
+    }
+    return newArr;
+}
+void MatrixPrintArray(double[,] array)// печать двумерного массива double, в виде таблицы
+{
+
+    for (int ind = 0; ind < array.GetLength(0); ind++)
+    {
+        for (int i = 0; i < array.GetLength(1); i++)
+        {
+            if (i == array.GetLength(1) - 1) Console.WriteLine($" {array[ind, i],6:f1}");
+            else Console.Write($"{array[ind, i],6:f1}");
+        }
+
+    }
+}
+string OutPosition(double[,] arr, int line, int column)//выводит значение из массива число округленное до десятых в виде строки
+{
+    if (line < arr.GetLength(0) && column < arr.GetLength(1)) return Convert.ToString(Math.Round(arr[line-1, column-1], 1));
+    else return "такого числа в массиве нет";
+}
+Console.Clear();
+Console.Write("Задайте строку элемента в двумерном массиве : ");
+int line = Convert.ToInt32(Console.ReadLine());
+Console.Write("Задайте столбец элемента в двумерном массиве : ");
+int column = Convert.ToInt32(Console.ReadLine());
+double[,] array = NewMatrixArrRand(-10, 10, 1);
+string rezult = OutPosition(array, line, column);
+Console.WriteLine($"{line}, {column} -> {rezult}");
+//MatrixPrintArray(array); //для проверки вывода

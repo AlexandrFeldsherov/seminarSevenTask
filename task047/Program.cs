@@ -3,7 +3,7 @@ m = 3, n = 4.
 0,5 7 -2 -0,2
 1 -3,3 8 -9,9
 8 7,8 -7,1 9*/
-double[,] MatrixArrRand(double[,] arr, int a, int b, int c)//заполняет созданный массив псевдослучайными вещественными числами числами в интервале от 'a' до 'b' c количеством знаков после запятой 'c'
+double[,] MatrixArrRand(double[,] arr, int a, int b)//заполняет созданный массив псевдослучайными вещественными числами числами в интервале от 'a' до 'b'
 {
     double[,] newArr = new double[arr.GetLength(0), arr.GetLength(1)];
     Random rnd = new Random();
@@ -11,7 +11,7 @@ double[,] MatrixArrRand(double[,] arr, int a, int b, int c)//заполняет 
     {
         for (int ind = 0; ind < arr.GetLength(1); ind++)
         {
-            double value = Math.Round(rnd.NextDouble(), c) + rnd.Next(a, b);
+            double value = rnd.NextDouble() + rnd.Next(a, b);
             newArr[i, ind] = value;
         }
     }
@@ -24,8 +24,8 @@ void MatrixPrintArray(double[,] array)// печать двумерного ма�
     {
         for (int i = 0; i < array.GetLength(1); i++)
         {
-            if (i == array.GetLength(1) - 1) Console.WriteLine($" {array[ind, i],6}");
-            else Console.Write($"{array[ind, i],6}");
+            if (i == array.GetLength(1) - 1) Console.WriteLine($" {array[ind, i],6:f1}");
+            else Console.Write($"{array[ind, i],6:f1}");
         }
 
     }
@@ -36,6 +36,6 @@ int line = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество сстолбцов массива n : ");
 int column = Convert.ToInt32(Console.ReadLine());
 double[,] array = new double[line, column];
-array = MatrixArrRand(array, -10, 10, 1);
+array = MatrixArrRand(array, -10, 10);
 Console.WriteLine($"m={line}, n={column}.");
 MatrixPrintArray(array);
