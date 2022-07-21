@@ -41,9 +41,9 @@ string OutPosition(double[,] arr, int line, int column)//выводит знач
     else return "такого числа в массиве нет";
 }
 Console.Clear();
-Console.Write("Задайте строку элемента в двумерном массиве : ");
+Console.Write("Задайте строку элемента в двумерном массиве : ");//показалось, что вывод при таком запросе будет более нагляден для пользователя, где значение первого элемента будет не 0,0, а 1,1 (возможно не прав)
 int line = Convert.ToInt32(Console.ReadLine());
-Console.Write("Задайте столбец элемента в двумерном массиве : ");
+Console.Write("Задайте столбец элемента в двумерном массиве : ");//
 int column = Convert.ToInt32(Console.ReadLine());
 double[,] array = NewMatrixArrRand(-10, 10);
 string rezult = OutPosition(array, line, column);
