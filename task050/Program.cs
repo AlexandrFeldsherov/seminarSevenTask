@@ -37,7 +37,7 @@ void MatrixPrintArray(double[,] array)// печать двумерного ма�
 }
 string OutPosition(double[,] arr, int line, int column)//выводит значение из массива число округленное до десятых в виде строки
 {
-    if (line < arr.GetLength(0) && column < arr.GetLength(1)) return Convert.ToString(Math.Round(arr[line-1, column-1], 1));
+    if (line <= arr.GetLength(0) && column <= arr.GetLength(1)) return Convert.ToString(Math.Round(arr[line-1, column-1], 1));
     else return "такого числа в массиве нет";
 }
 Console.Clear();
