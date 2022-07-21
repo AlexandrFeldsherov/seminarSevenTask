@@ -8,8 +8,8 @@
 int[,] NewMatrixArrRand(int a, int b)//создает массив заполнненный псевдослучайными вещественными числами числами в интервале от 'a' до 'b'
 {
     Random rnd = new Random();
-    int line = rnd.Next(1, 5);
-    int column = rnd.Next(1, 5);
+    int line = rnd.Next(3, 5); //случайная размерность строк массива
+    int column = rnd.Next(3, 5); //случайная размерность сстолбцов массива
     int[,] newArr = new int[line, column];
 
     for (int i = 0; i < line; i++)
@@ -52,8 +52,10 @@ void MatrixPrintArray(int[,] array)// печать двумерного масс
 
     }
 }
-
+Console.Clear();
 int[,] array = NewMatrixArrRand(1, 4);
-LinesMatrixArithmeticMean(array);
 Console.WriteLine();
-//MatrixPrintArray(array);
+MatrixPrintArray(array);
+Console.WriteLine();
+LinesMatrixArithmeticMean(array);
+

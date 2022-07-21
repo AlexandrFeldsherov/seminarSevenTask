@@ -8,8 +8,8 @@
 double[,] NewMatrixArrRand(int a, int b, int c)//создает массив заполнненный псевдослучайными вещественными числами числами в интервале от 'a' до 'b'
 {
     Random rnd = new Random();
-    int line = rnd.Next(1, 15);
-    int column = rnd.Next(1, 15);
+    int line = rnd.Next(3, 10);//случайная размерность строк массива
+    int column = rnd.Next(3, 10);////случайная размерность сстолбцов массива
     double[,] newArr = new double[line, column];
 
     for (int i = 0; i < line; i++)
@@ -47,5 +47,5 @@ Console.Write("Задайте столбец элемента в двумерн�
 int column = Convert.ToInt32(Console.ReadLine());
 double[,] array = NewMatrixArrRand(-10, 10, 1);
 string rezult = OutPosition(array, line, column);
+MatrixPrintArray(array);
 Console.WriteLine($"{line}, {column} -> {rezult}");
-//MatrixPrintArray(array); //для проверки вывода
