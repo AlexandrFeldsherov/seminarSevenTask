@@ -9,7 +9,7 @@ double[,] NewMatrixArrRand(int a, int b, int c)//создает массив з�
 {
     Random rnd = new Random();
     int line = rnd.Next(3, 10);//случайная размерность строк массива
-    int column = rnd.Next(3, 10);////случайная размерность сстолбцов массива
+    int column = rnd.Next(3, 10);//случайная размерность сстолбцов массива
     double[,] newArr = new double[line, column];
 
     for (int i = 0; i < line; i++)
