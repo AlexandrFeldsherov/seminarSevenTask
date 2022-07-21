@@ -5,7 +5,7 @@
 8 4 2 4
 1, 7 -> такого числа в массиве нет*/
 
-double[,] NewMatrixArrRand(int a, int b, int c)//создает массив заполнненный псевдослучайными вещественными числами числами в интервале от 'a' до 'b'
+double[,] NewMatrixArrRand(int a, int b)//создает массив заполнненный псевдослучайными вещественными числами числами в интервале от 'a' до 'b'
 {
     Random rnd = new Random();
     int line = rnd.Next(3, 10);//случайная размерность строк массива
@@ -45,7 +45,7 @@ Console.Write("Задайте строку элемента в двумерно�
 int line = Convert.ToInt32(Console.ReadLine());
 Console.Write("Задайте столбец элемента в двумерном массиве : ");
 int column = Convert.ToInt32(Console.ReadLine());
-double[,] array = NewMatrixArrRand(-10, 10, 1);
+double[,] array = NewMatrixArrRand(-10, 10);
 string rezult = OutPosition(array, line, column);
 MatrixPrintArray(array);
 Console.WriteLine($"{line}, {column} -> {rezult}");
